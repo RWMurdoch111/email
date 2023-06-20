@@ -1,0 +1,545 @@
+
+<script runat=server language=ampscript>
+  VAR @businessname
+  VAR @propbusiness
+  SET @businessname = Trading_Name__c 
+  SET @propbusiness = ProperCase(@businessname)
+</script>                                 
+                                 
+<!DOCTYPE html>
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <!--Help character display properly.-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--Set the initial scale of the email.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Force Outlook clients to render with a better MS engine.-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!--Help prevent blue links and autolinking-->
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <!--prevent Apple from reformatting and zooming messages.-->
+  <meta name="x-apple-disable-message-reformatting">
+  <custom name="opencounter" type="tracking"/>
+  <!--target dark mode-->
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark only">
+
+  <!-- Allow for better image rendering on Windows hi-DPI displays. -->
+  <!--[if mso]>
+<noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+</noscript>
+<![endif]-->
+
+  <!--to support dark mode meta tags-->
+  <style type="text/css">
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+  </style>
+<!-- TrustBox script -->
+
+<!-- End TrustBox script -->
+
+  <!--webfont code goes here-->
+  <!--[if (gte mso 9)|(IE)]><!-->
+  <!--webfont <link /> goes here-->
+  <style>
+      @font-face {
+            font-family: 'Sul Sans Regular';
+            src: url('https://liberisproductioncdn.blob.core.windows.net/fonts/SulSans-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+  </style>
+  <!--<![endif]-->
+
+  <style type="text/css">
+    .body-fix {
+      height: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+        word-spacing: normal;
+    }
+
+    div[style*="margin:16px 0"] {
+      margin: 0 !important;
+    }
+
+    table,
+    td {
+      border-collapse: collapse !important;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    img {
+      border: 0;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      display: block;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    u+#body a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    .link:hover {
+      text-decoration: none !important;
+    }
+
+    .fadeimg {
+      transition: 0.3s !important;
+      opacity: 1 !important;
+    }
+
+    .fadeimg:hover {
+      transition: 0.3s !important;
+      opacity: 0.5 !important;
+    }
+
+    /* start CTA HOVER EFFECTS */
+    .cta { transition: 0.3s !important; }
+    .cta span{ transition: 0.3s !important; }
+    .cta:hover { transition: 0.5s !important; background-color: #864dff !important; transform: scale(1.05);}
+    .cta:hover span { transition: 0.3s !important; }
+    .cta-border:hover { border-bottom: 3px solid transparent !important; }
+    /* end CTA HOVER EFFECTS */
+
+    .mobile {
+      display: none;
+    }
+
+
+  </style>
+
+  <!--mobile styles-->
+  <style>
+    @media screen and (max-width:600px) {
+        .wMobile { width: 95% !important; }
+        .wInner {  width: 90% !important; }
+        .wFull { width: 100% !important; }
+        .imgFull { margin: 0px 20px !important;  }
+        .star-img { width: 100% !important; height: auto !important;}
+        .desktop { width: 0 !important; display: none !important; }
+        .mobile { display: block !important; }
+        .std { font-size: 16px !important; line-height: 28px !important; }
+        .tPad-0 { padding-top: 0 !important; }
+        .stats-box {width:50% !important; }
+        p {font-size: 24px !important; line-height:40px !important}
+        .prod-type {width: 100% !important;}
+    }
+  </style>
+
+  <!--dark mode styles-->
+  <!--these are just example classes that can be used.-->
+  <style>
+    @media (prefers-color-scheme: dark) {
+
+      /* Shows Dark Mode-Only Content, Like Images */
+      .dark-img {
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        float: none !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        line-height: auto !important;
+        margin-top: 0px !important;
+        visibility: inherit !important;
+      }
+
+      /* Hides Light Mode-Only Content, Like Images */
+      .light-img {
+        display: none;
+        display: none !important;
+      }
+
+      /* Custom Dark Mode Background Color */
+      .darkmode {
+        background-color: #362E5B !important;
+      }
+      .darkmode2 {
+        background-color: #161031 !important;
+      }
+
+      /* Custom Dark Mode Font Colors */
+      h1, h2, h3, p, span, a, li {
+        color: #fdfdfd !important;
+      }
+
+
+      /* Custom Dark Mode Text Link Color */
+      .link { color: #ffffff !important; }
+      .footer a.link{ color: #fdfdfd !important; }
+    }
+
+    /* Copy dark mode styles for android support */
+    /* Shows Dark Mode-Only Content, Like Images */
+    [data-ogsc] .dark-img {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      float: none !important;
+      max-height: inherit !important;
+      max-width: inherit !important;
+      line-height: auto !important;
+      margin-top: 0px !important;
+      visibility: inherit !important;
+    }
+
+    /* Hides Light Mode-Only Content, Like Images */
+    [data-ogsc] .light-img {
+      display: none;
+      display: none !important;
+    }
+
+    /* Custom Dark Mode Background Color */
+    [data-ogsc] .darkmode {
+      background-color: #362E5B !important;
+    }
+    [data-ogsc] .darkmode2 {
+      background-color: #161031 !important;
+    }
+
+    /* Custom Dark Mode Font Colors */
+    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] li {
+      color: #fdfdfd !important;
+    }
+
+    /* Custom Dark Mode Text Link Color */
+    [data-ogsc] .link { color: #ffffff !important; }
+
+    [data-ogsc] .footer a.link { color: #ffffff !important; }
+  </style>
+
+  <!--correct superscripts in Outlook-->
+  <!--[if (gte mso 9)|(IE)]>
+        <style>
+          sup{font-size:100% !important;}
+        </style>
+        <![endif]-->
+  <title></title>
+
+</head>
+
+<body id="body" class="darkmode body body-fix" bgcolor="#ffffff" style="background-color:#ffffff;">
+<div role="article" aria-roledescription="email" aria-label="Email from Liberis" xml:lang="en" lang="en" >
+  <!--hidden preheader with preh-header spacer hack-->
+  <div class="litmus-builder-preview-text" style="display:none;">
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+  <!--start of email-->
+  <table class="darkmode2" bgcolor="#eeeeee" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;">
+    <!--main content area-->
+    <tr>
+        <td class="tPad-0" align="center" valign="top" style="padding-top: 20px;">
+            <table class="wFull darkmode2" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:600px; background-color: #B596FD;">
+                <!--header-->
+                <tr>
+                    <td align="center" valign="top" style="padding:50px 0 20px;">
+                    <!--light mode logo image-->
+                    <a href="https://my.liberis.co.uk/" target="_blank"><img class="light-img" src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/c92c00fb-bdc7-4bfe-9109-14ae80a214c6.png" width="150" height="auto" alt="Liberis" style="color: #4a4a4a; font-family: 'Sul Sans Regular', Arial, sans-serif; text-align:center; font-weight:bold; font-size:24px; line-height:28x; text-decoration: none; padding: 0;">
+                    <!--dark mode logo image-->
+                    <!--[if !mso]><! -->
+                    <div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                        <img src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/c92c00fb-bdc7-4bfe-9109-14ae80a214c6.png" width="150" height="auto" alt="Liberis" style="color: #4a4a4a; font-family: 'Sul Sans Regular', Arial, sans-serif; text-align:center; font-weight:bold; font-size:24px; line-height:28px; text-decoration: none; padding: 0;" border="0" />
+                    </div>
+                    <!--<![endif]--></a>
+                    </td>
+                </tr>
+                <!--Subhead-->
+                <tr>
+                  <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                      <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #B596FD; width:560px;">
+                          <tr>
+                              <td class="" align="center" valign="top" style="padding:0px;">
+                                <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 0px; font-size: 16px; line-height: 28px; color: #FFFFFF;">Special offer: 30 days to expire!       
+                                </p>
+                              </td>
+                          </tr>
+                      </table>
+                  </td>
+                </tr> 
+                  
+              <!--Offer block-->
+              <tr>
+                <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                    <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #B596FD; width:560px;">
+                        <tr>
+                            <td class="" align="center" valign="top" style="padding:0px;">
+                                <!--headline-->
+                                <h1 style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 20px 20px;font-size: 34px; line-height: 50px; text-align: center; color: #161031; font-weight: 600;"><a href="https://my.liberis.co.uk/?utm_campaign=2022REN_9_5&utm_source=LBRS&utm_medium=EM&utm_term=&utm_content=ML" target="_blank" style="color: #FFFFFF; text-decoration: none;">You're eligible for £100,000 in funding!</a></h1>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr> 
+              <!--Offer block-->
+              <tr>
+                <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                    <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #FFFFFF; width:560px;">
+                        <tr>
+                            <td class="" align="center" valign="top" style="padding:0px;">
+                                <!--Image-->
+                                <img src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/a7f35667-4dc3-4cc4-a7fb-f54360787f3f.png">
+                                <!--subhead-->
+                                <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 16px; line-height: 28px; color: #161031;">We've got some thrilling news just for you! Your business is eligible for an exclusive funding offer that will take you to new heights 🚀
+                                          
+                                </p>
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr> 
+              <!--Offer block-->
+              <tr>
+                <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                    <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #F7F3FF; width:600px;">
+                        <tr>
+                            <td class="" align="center" valign="top" style="padding:0px;">
+                                <!--Image-->
+                                <img src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/7cb8baa7-9b61-40cf-a9b8-64f89f7afde9.png" width="200">
+                                <!--subhead-->
+                                <h1 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 20px; line-height: 28px; color: #161031;">1️⃣ Give us a buzz at [Phone Number]
+                                  
+                                </h1>
+                               
+                                <!--subhead-->
+                                <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 16px; line-height: 28px; color: #161031;">
+                                  Reach out to our team at [Phone Number] to unlock this exciting opportunity. We're standing by, eager to chat with you and get things rolling!
+                                </p>
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr> 
+              <!--Offer block-->
+              <tr>
+                <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                    <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #FFFFFF; width:600px;">
+                        <tr>
+                            <td class="" align="center" valign="top" style="padding:0px;">
+                              <!--Image-->
+                              <img src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/da200839-90c6-451e-abd7-8e125033e3d4.png" width="200">
+                                <!--subhead-->
+                                <h1 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 20px; line-height: 28px; color: #161031;">2️⃣ Let's talk numbers and agree on a fixed cost      
+                                </h1>
+                                <!--subhead-->
+                                <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 16px; line-height: 28px; color: #161031;">
+                                  During our conversation, we'll dive deep into your funding needs and find the perfect fit for your business. We believe in transparency, so we'll agree on a fixed cost that works for you and your goals.
+                                          
+                                </p>
+                            
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr> 
+              <!--Offer block-->
+              <tr>
+                <td class="darkmode2" align="center" valign="top" style="padding: 0px 0px 0px;">
+                    <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #F7F3FF; width:600px;">
+                        <tr>
+                            <td class="" align="center" valign="top" style="padding:0px;">
+                              <!--Image-->
+                              <img src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/53b38626-fd7f-4e80-a4c2-cf4f4686b650.png" width="200">
+                                <!--subhead-->
+                                <h1 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 20px; line-height: 28px; color: #161031;">3️⃣ Funds on the fast track! Same-day delivery 🚀
+                                  
+                                          
+                                </h1>
+                                <!--subhead-->
+                                <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 60px 30px; font-size: 16px; line-height: 28px; color: #161031;">
+                      
+                                  Once we've sealed the deal, you'll be on the fast track to receiving your funds. We won't keep you waiting—the cash will be in your hands the same day!
+                                          
+                                </p>
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr> 
+                
+                
+                <!--Business update block-->
+                <tr>
+                    <td class="darkmode2" align="center" valign="top" style="padding: 20px 0px 0px;background-color: #FFFFFF; width:600px;">
+                        <table class="darkmode" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #FFFFFF; width:600px;">
+                          <!--Visual bar-->
+                          <tr>
+                            <td align="center" valign="top" style="padding: 10px 0;">
+                              <!-- Percentage bar container -->
+                              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                <tr>
+                                  <td align="center" valign="top">
+                                    <!-- Percentage bar -->
+                                    <table width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border: 1px #4a4a4a; border-radius: 20px;">
+                                      <tr>
+                                        <td align="center" valign="middle" width="%%Paid_Off__c%%%" bgcolor="#864dff" style="height: 20px;border-radius: 20px;"></td>
+                                        <td align="center" valign="middle" width="100 - %%Paid_Off__c%%%" bgcolor="#f2f2f2" style="height: 20px;border-radius: 20px;"></td>
+                                      </tr>
+                                    </table>
+                                    </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                
+                            <tr>
+                                <td class="" align="center" valign="top" style="padding:0px;background-color: #FFFFFF; width:600px;">
+                                    <!--headline-->
+                                    <h1 style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 50px 20px;font-size: 24px; line-height: 50px; text-align: center; color: #161031; font-weight: 600;"><a href="https://my.liberis.co.uk/?utm_campaign=2022REN_9_5&utm_source=LBRS&utm_medium=EM&utm_term=&utm_content=ML" target="_blank" style="color: #161031; text-decoration: none;">%%= v(@propbusiness) =%% weekly update</a></h1>
+                                    <!--subhead-->
+                                    <p align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 20px 30px 30px; font-size: 16px; line-height: 28px; color: #161031;">
+                                        Look's like things are on track with your payments - according to our predictions you'll finish on the <strong>%%Predicted_End_Date%%</strong>.                                         
+                                    </p>
+                                
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>           
+                 <!--Stats box-->
+              <tr>
+                <td style="padding: 0px 0px 50px;width:600px; background-color:FFFFFF;">
+                    <table width="540" align="center" style="width:540px; background-color:FFFFFF ;">
+                    <!--Stats box header-->
+                        <tr>
+                            <td>
+                                <!--Stats box 1-->
+                                <td  align="center" valign="top" style="padding:0px">
+                                    <table  class="darkmode" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #EAE1FF;border-radius: 15px; width:170px; height:80px; border:1px;">
+                                        <tr>
+                                            <td class="wFull" align="center" valign="top" style="padding:0px;">
+                                                <!--Icons-->
+                                                <img class="imgFull" src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/7cf2041a-23fd-46b7-b590-5c8893668508.png" alt="paid" width="40" height="" style="padding:20px">
+                                                <!--subhead-->
+                                                <h2 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 0px 20px 15px; font-size: 20px; line-height: 24px; color: #161031; font-weight: normal;">£100</h2>
+                                                <!--headline-->
+                                                <h1 style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin:10px 0px;font-size: 16px; line-height: 20px; text-align: center; color: #161031; font-weight: 400;"><a  target="_blank" style="color: #161031; text-decoration: none;">Paid so far</h1>                                       
+                                                
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <!--Stats box 2-->
+                                <td  align="center" valign="top" style="padding:0px">
+                                    <table  class="darkmode" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #EAE1FF;border-radius: 15px; width:170px; height:80px; border:1px;">
+                                        <tr>
+                                            <td class="wFull" align="center" valign="top" style="padding:0px;">
+                                                <!--Icons-->
+                                                <img class="imgFull" src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/443461fa-0574-4b74-814b-942becbe7cb2.png" alt="paid" width="40" height="" style="padding:20px">
+                                                <!--subhead-->
+                                                <h2 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 0px 20px 15px; font-size: 20px; line-height: 24px; color: #161031; font-weight: normal;">15%</h2>
+                                                <!--headline-->
+                                                <h1 style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin:10px 0px;font-size: 16px; line-height: 20px; text-align: center; color: #161031; font-weight: 400;"><a  target="_blank" style="color: #161031; text-decoration: none;">Percentage paid</h1>                                       
+                                                
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <!--Stats box 3-->
+                                <td  align="center" valign="top" style="padding:0px">
+                                    <table  class="darkmode" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #EAE1FF;border-radius: 15px; width:170px; height:80px; border:1px;">
+                                        <tr>
+                                            <td class="wFull" align="center" valign="top" style="padding:0px;">
+                                                <!--Icons-->
+                                                <img class="imgFull" src="http://image.e.liberis.co.uk/lib/fe2e11717064047f7d1276/m/1/8ab549ef-98fd-420d-b899-4384cee48cc8.png" alt="paid" width="40" height="" style="padding:20px">
+                                                <!--subhead-->
+                                                <h2 align="center" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 0px 20px 15px; font-size: 20px; line-height: 24px; color: #161031; font-weight: normal;">£100</h2>
+                                                <!--headline-->
+                                                <h1 style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin:10px 0px;font-size: 16px; line-height: 20px; text-align: center; color: #161031; font-weight: 400;"><a  target="_blank" style="color: #161031; text-decoration: none;">What's left to pay</h1>                                       
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </td>
+                        </tr>                       
+                    </table>
+                </td>
+            </tr>
+            
+                             
+            </table>
+        </td>
+    </tr>
+    <!--footer-->
+    <tr>
+        <td class="footer darkmode2" align="center" valign="top" style="padding:50px 0;">
+        <p style="font-family: 'Sul Sans Regular', Arial, sans-serif;font-size:14px;line-height:24px;mso-line-height-rule:exactly;color:#0a080b;margin-bottom:20px;">
+        <a href="" class="link" target="_blank" style="color: #0a080b; text-decoration: underline;"></a></p>
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px; max-width:600px;"></a>
+                <tr>
+                    <td>
+                        <!--subhead-->
+                        <p align="left" style="font-family: 'Sul Sans Regular', Arial, sans-serif; margin: 0 20px 30px; font-size: 16px; line-height: 20px; color: #0a080b;">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        </p>
+                    </td>
+                </tr>   
+            </table>
+        </td>
+      </tr>
+  </table>
+</div>
+</body>
+</html>
